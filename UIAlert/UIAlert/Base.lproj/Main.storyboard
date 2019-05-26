@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIAlert" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-Ps-6HK">
+                                <rect key="frame" x="46" y="184" width="283" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.204034418" blue="0.1728626811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Show basic alert">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showBasicAlert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HeJ-Kz-6Yc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zW-4t-SlE">
+                                <rect key="frame" x="46" y="234" width="283" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.204034418" blue="0.1728626811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="NRW-IW-zdE"/>
+                                </constraints>
+                                <state key="normal" title="invalid email">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="invalidEmail:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ow7-pg-v2E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9j-i7-4j7">
+                                <rect key="frame" x="46" y="284" width="283" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.204034418" blue="0.1728626811" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Network error">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="networkError:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N2E-tR-G7q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gGj-Ps-6HK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="6PX-RZ-UtC"/>
+                            <constraint firstItem="z9j-i7-4j7" firstAttribute="top" secondItem="4zW-4t-SlE" secondAttribute="bottom" constant="20" id="CrZ-jH-JQq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4zW-4t-SlE" secondAttribute="trailing" constant="30" id="JKz-IH-KqM"/>
+                            <constraint firstItem="z9j-i7-4j7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Mzr-3K-dnq"/>
+                            <constraint firstItem="z9j-i7-4j7" firstAttribute="top" secondItem="4zW-4t-SlE" secondAttribute="bottom" constant="20" id="PFf-ZC-mp9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gGj-Ps-6HK" secondAttribute="trailing" constant="30" id="Ykn-Mb-R2K"/>
+                            <constraint firstItem="gGj-Ps-6HK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="164" id="crn-Wy-dsM"/>
+                            <constraint firstItem="4zW-4t-SlE" firstAttribute="top" secondItem="gGj-Ps-6HK" secondAttribute="bottom" constant="20" id="d2W-Fz-pBg"/>
+                            <constraint firstItem="z9j-i7-4j7" firstAttribute="top" secondItem="4zW-4t-SlE" secondAttribute="bottom" constant="20" id="h4u-Hk-dnK"/>
+                            <constraint firstItem="4zW-4t-SlE" firstAttribute="top" secondItem="gGj-Ps-6HK" secondAttribute="bottom" constant="20" id="kaz-Ps-N2T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z9j-i7-4j7" secondAttribute="trailing" constant="30" id="lZL-qg-IW1"/>
+                            <constraint firstItem="4zW-4t-SlE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="rFz-3T-MIc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
