@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hv6-UT-F4K">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="guess_the_flag_game" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBa-fL-eYw">
+                                <rect key="frame" x="60.5" y="130" width="254" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7fR-aK-mC3"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WYE-yM-iW4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lE8-mX-ACl">
+                                <rect key="frame" x="56.5" y="370" width="262" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Olp-f6-FqT"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zUH-62-T0h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLg-y9-EwA">
+                                <rect key="frame" x="87.5" y="300" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Lte-QJ-FCF"/>
+                                    <constraint firstAttribute="width" constant="200" id="eho-gB-jqL"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="us"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wd7-xe-SoP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DBa-fL-eYw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="44.5" id="1ge-pk-oAk"/>
+                            <constraint firstItem="lE8-mX-ACl" firstAttribute="centerX" secondItem="lLg-y9-EwA" secondAttribute="centerX" id="2gk-CK-AJk"/>
+                            <constraint firstItem="lE8-mX-ACl" firstAttribute="top" secondItem="lLg-y9-EwA" secondAttribute="bottom" constant="40" id="Ewy-R8-kA8"/>
+                            <constraint firstItem="lE8-mX-ACl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40.5" id="Nry-8o-EF4"/>
+                            <constraint firstItem="DBa-fL-eYw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="66" id="Pfi-nc-cJU"/>
+                            <constraint firstItem="lLg-y9-EwA" firstAttribute="centerX" secondItem="DBa-fL-eYw" secondAttribute="centerX" id="Sr3-w0-Prc"/>
+                            <constraint firstItem="lLg-y9-EwA" firstAttribute="top" secondItem="DBa-fL-eYw" secondAttribute="bottom" id="ZpW-xS-St2"/>
+                            <constraint firstItem="lE8-mX-ACl" firstAttribute="firstBaseline" secondItem="lLg-y9-EwA" secondAttribute="baseline" constant="24" symbolType="layoutAnchor" id="ePk-Nt-nwZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lE8-mX-ACl" secondAttribute="trailing" constant="40.5" id="fdB-sK-65B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DBa-fL-eYw" secondAttribute="trailing" constant="44.5" id="vQj-7Z-TK5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QDf-bj-ZRX"/>
+                    <connections>
+                        <outlet property="button1" destination="DBa-fL-eYw" id="H3U-if-Twj"/>
+                        <outlet property="button2" destination="lLg-y9-EwA" id="JVU-dF-3sb"/>
+                        <outlet property="button3" destination="lE8-mX-ACl" id="Jst-4h-OdG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="01j-Xx-G45">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hv6-UT-F4K" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EhH-SH-zSV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="GW3-gU-z6V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SED-SL-dVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="792.95352323838085"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="us" width="200" height="100"/>
+    </resources>
+</document>
