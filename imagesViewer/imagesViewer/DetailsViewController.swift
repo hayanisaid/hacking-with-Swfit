@@ -19,8 +19,13 @@ class DetailsViewController: UIViewController {
         title = "Picture \( imageIndex) of \(imagesCount)"
         navigationItem.largeTitleDisplayMode = .never
         setImageSource ()
+        setNavigationButtom()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func setNavigationButtom (){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
     }
     
     func setImageSource (){
@@ -47,5 +52,16 @@ class DetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+  @objc func  shareTapped(){
+    guard let image = imageView.image?.jpegData(compressionQuality: 0.8)else{
+        print("No image found")
+        return
+    }
+    let imageName = imageView.image
+    
+    let vc = UIActivityViewController(activityItems: [image,imageName], applicationActivities: [])
+      vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+      present(vc, animated: true)
+    
+    }
 }
