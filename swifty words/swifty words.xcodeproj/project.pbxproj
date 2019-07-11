@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		842DA2C822D7A69C0058694C /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 842DA2C622D7A69B0058694C /* level1.txt */; };
+		842DA2C922D7A69C0058694C /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 842DA2C722D7A69B0058694C /* level2.txt */; };
 		84CF377C22D590EB00D91BFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF377B22D590EB00D91BFA /* AppDelegate.swift */; };
 		84CF377E22D590EB00D91BFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CF377D22D590EB00D91BFA /* ViewController.swift */; };
 		84CF378122D590EB00D91BFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CF377F22D590EB00D91BFA /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		842DA2C622D7A69B0058694C /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
+		842DA2C722D7A69B0058694C /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
 		84CF377822D590EB00D91BFA /* swifty words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swifty words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CF377B22D590EB00D91BFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CF377D22D590EB00D91BFA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				84CF377F22D590EB00D91BFA /* Main.storyboard */,
 				84CF378222D590ED00D91BFA /* Assets.xcassets */,
 				84CF378422D590ED00D91BFA /* LaunchScreen.storyboard */,
+				842DA2C622D7A69B0058694C /* level1.txt */,
+				842DA2C722D7A69B0058694C /* level2.txt */,
 				84CF378722D590ED00D91BFA /* Info.plist */,
 			);
 			path = "swifty words";
@@ -229,7 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842DA2C922D7A69C0058694C /* level2.txt in Resources */,
 				84CF378622D590ED00D91BFA /* LaunchScreen.storyboard in Resources */,
+				842DA2C822D7A69C0058694C /* level1.txt in Resources */,
 				84CF378322D590ED00D91BFA /* Assets.xcassets in Resources */,
 				84CF378122D590EB00D91BFA /* Main.storyboard in Resources */,
 			);
