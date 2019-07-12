@@ -13,11 +13,13 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-         loadJsonData()
+       
+        performSelector(inBackground: #selector(loadJsonData), with: nil)
         
         
     }
+    
+   
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return pettions.count
@@ -38,7 +40,7 @@ class ViewController: UITableViewController {
     }
 
     
-    func loadJsonData(){
+    @objc func loadJsonData(){
         let urlString: String
         if navigationController?.tabBarItem.tag == 0 {
             // urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
@@ -47,17 +49,21 @@ class ViewController: UITableViewController {
             // urlString = "https://api.whitehouse.gov/v1/petitions.json?signatureCountFloor=10000&limit=100"
             urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
         }
+      
         
-        if let url = URL(string: urlString){
-            if let data = try? Data(contentsOf: url){
-                // do some magic here
-                parseJson(json: data)
+            if let url = URL(string: urlString){
+                if let data = try? Data(contentsOf: url){
+                    // do some magic here
+                    parseJson(json: data)
+                }else{
+                    performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
+              
+                }
             }else{
-                showError()
+               performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
             }
-        }else{
-            showError()
-        }
+        
+       
         
     }
     
@@ -65,17 +71,23 @@ class ViewController: UITableViewController {
         let decoder = JSONDecoder()
         if let json = try? decoder.decode(Petitions.self, from: json){
             pettions = json.results
-            tableView.reloadData()
+            DispatchQueue.main.async {[weak self] in
+                 self?.tableView.reloadData()
+            }
+           
             
         }else{
             showError()
         }
     }
     
-    func showError(){
-        let ac = UIAlertController(title: "Error loading", message: "There was error loading Data, please check your connection", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(ac, animated: true)
+    @objc func showError(){
+     
+            let ac = UIAlertController(title: "Error loading", message: "There was error loading Data, please check your connection", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(ac, animated: true)
+        
+        
     }
 }
 
