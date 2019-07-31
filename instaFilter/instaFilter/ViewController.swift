@@ -45,6 +45,8 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
     }
     
     @IBAction func save(_ sender: Any) {
+        guard let image = imageView.image as? UIImage else {return}
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
     }
     @IBAction func intensityChanged(_ sender: Any) {
         applyProcessing()
@@ -59,6 +61,19 @@ class ViewController: UIViewController,UINavigationControllerDelegate,UIImagePic
         }
     
         
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error{
+            let ac  = UIAlertController(title: "Error Saving inage", message: "An error Accured!", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            present(ac,animated: true)
+            
+        }else{
+            let ac  = UIAlertController(title: "Image Saved!", message: "Image Saved Successfully in your Libray Album", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            present(ac,animated: true)
+        }
     }
 }
 
