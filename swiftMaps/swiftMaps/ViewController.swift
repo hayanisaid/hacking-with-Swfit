@@ -24,6 +24,7 @@ class ViewController: UIViewController,MKMapViewDelegate {
         let rome = Capital(title: "Rome", coordinate: CLLocationCoordinate2D(latitude: 41.9, longitude: 12.5), info: "Has a whole country inside it.")
         let washington = Capital(title: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667), info: "Named after George himself.")
         mapView.addAnnotations([nyc,london,washington,rome,paris])
+        mapView.mapType = .satellite
         
     }
     
@@ -31,6 +32,8 @@ class ViewController: UIViewController,MKMapViewDelegate {
         guard annotation is Capital else {return nil}
         let identifier = "Capital"
         var annotaionView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+         annotaionView?.tintColor = .purple
+        
         if annotaionView == nil{
             annotaionView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotaionView?.canShowCallout = true
@@ -40,6 +43,7 @@ class ViewController: UIViewController,MKMapViewDelegate {
            
         }else{
             annotaionView?.annotation = annotation
+           
         }
         
         return annotaionView
